@@ -36,15 +36,8 @@ public:
             nums[p] = nums[q];
             nums[q] = temp;
          }
-         q = n - 1;
-         while(q >= 0){
-            if(nums[q] != val){
-                ans = q;
-                break;
-            }
-            q--;
-         }
-         return q + 1;
+
+         return nums[q] == val ? q : q + 1;
     }
 };
 // @lc code=end

@@ -1,0 +1,5 @@
+.vscode/tasks.json
+test.cpp
+.vscode/launch.json
+.vscode/settings.json
+output/test.exe

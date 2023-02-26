@@ -27,7 +27,7 @@ public:
                 pos = i;
             }
         }
-        int p = pos, q = pos;
+        int p = pos, q = pos+1;
         vector<int> ans;
         while(p >= 0 && q < n) {
             if(nums[p] < nums[q]) {
@@ -47,7 +47,6 @@ public:
             ans.push_back(nums[q]*nums[q]);
             q++;
         }
-        ans.erase(ans.begin());
         return ans;
     }
 };
