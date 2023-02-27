@@ -1,3 +1,11 @@
+// @before-stub-for-debug-begin
+#include <vector>
+#include <string>
+#include "commoncppproblem1.h"
+
+using namespace std;
+// @before-stub-for-debug-end
+
 /*
  * @lc app=leetcode.cn id=1 lang=cpp
  *
@@ -31,11 +39,10 @@ public:
         sort(beans.begin(), beans.end(), cmp);
 
         for(int i = 0; i < n; i++) {
-            int l = 0, r = n-1;
-            int mid;
+            int l = 0, r = n;
             int x = target - nums[i];
             while(l < r) {
-                mid = (l+r)>>1;
+                int mid = (l+r)>>1;
                 if(x <= beans[mid].value) {
                     r = mid;
                 }
@@ -43,6 +50,7 @@ public:
                     l = mid + 1;
                 }
             }
+            if(l == n) continue;
             if (beans[l].index == i) continue;
             if(beans[l].value == x) {
                 ans.push_back(beans[l].index);
