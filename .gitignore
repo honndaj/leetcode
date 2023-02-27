@@ -2,4 +2,5 @@
 test.cpp
 .vscode/launch.json
 .vscode/settings.json
-output/test.exe
+output/*
+test_grammer.cpp
