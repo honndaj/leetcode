@@ -43,8 +43,8 @@ public:
 
     bool check(int target, vector<int> &sum, int len) {
         bool flag = 0;
-        int n = sum.size();
-        for(int i = 1; i + len <= n; i++) {
+        int n = sum.size() - 1;//与原先的n相等
+        for(int i = 1; i + len -1 <= n; i++) {
             if(sum[i + len -1] - sum[i-1] >= target) {
                 flag = 1;
                 break;

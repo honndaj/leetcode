@@ -15,7 +15,7 @@ public:
         int n = nums.size(), p = 0, q = 1, sum = 0, len = 0 ,ret = 100010;
         while(q <= n) {
             while(sum < target && q <= n){
-                sum += nums[q-1];
+                sum += nums[q - 1];
                 q++;
                 len++;
             }
