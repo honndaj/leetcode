@@ -1,3 +1,10 @@
+// @before-stub-for-debug-begin
+#include <vector>
+#include <string>
+
+using namespace std;
+// @before-stub-for-debug-end
+
 /*
  * @lc app=leetcode.cn id=977 lang=cpp
  *
@@ -22,25 +29,24 @@ public:
         }
         int p = pos, q = pos+1;
         vector<int> ans;
-        while(p >= 0 && q <= n) {
-            if(nums[p] < nums[q-1]) {
+        while(p >= 0 && q < n) {
+            if(nums[p] < nums[q]) {
                 ans.push_back(nums[p]*nums[p]);
                 p--;
             }
             else{
-                ans.push_back(nums[q-1]*nums[q-1]);
+                ans.push_back(nums[q]*nums[q]);
                 q++;
             }
         }
-        while(p >= 0){
+        while(p != -1){
             ans.push_back(nums[p]*nums[p]);
             p--;
         }
-        while(q <= n){
-            ans.push_back(nums[q-1]*nums[q-1]);
+        while(q != n){
+            ans.push_back(nums[q]*nums[q]);
             q++;
         }
-        ans.erase(ans.begin());
         return ans;
     }
 };
