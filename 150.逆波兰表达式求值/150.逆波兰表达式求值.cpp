@@ -19,7 +19,7 @@ public:
                 nums.push(cal(a,b,c));
             }
             else {
-                nums.push(stoi(c));
+                nums.push(get(c));
             }
         }
         return nums.top();
@@ -32,6 +32,18 @@ public:
         if(op == "/") ret = a/b;
         if(op == "*") ret = a*b;
         return ret; 
+    }
+
+    int get(string s) {
+        int ret = 0, symbol = 1, i = 0;
+        if(s[0] == '-'){
+            symbol = -1;
+            i++;
+        }
+        for(;i < s.length(); i++) {
+            ret = ret * 10 + s[i]-'0';
+        }
+        return ret*symbol;
     }
 };
 // @lc code=end
