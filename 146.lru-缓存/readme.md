@@ -1,0 +1,2 @@
+注意list的end返回的也是最后一个元素的下一个位置
+还有vector的erase参数是iterator
